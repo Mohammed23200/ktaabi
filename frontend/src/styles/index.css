@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base { html { font-family: theme('fontFamily.sans'); } }
+
+.glass { @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-soft; }
+.card { @apply glass rounded-2xl p-4; }
+.btn { @apply rounded-xl px-4 py-2 transition-all; }
+.btn-brand { @apply btn bg-brand-500 hover:bg-brand-600; }
+.input { @apply rounded-xl bg-white/5 border border-white/10 px-3 py-2 outline-none; }
+
+.bg-animated {
+  @apply min-h-screen;
+  background: linear-gradient(120deg, #3b2e2a, #5a463f, #2c211e);
+  background-size: 200% 200%;
+  animation: pan 22s linear infinite alternate;
+}
+.overlay-dots {
+  position: fixed; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
